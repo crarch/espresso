@@ -41,6 +41,8 @@ install(TARGETS espresso RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 # documentation
 option(BUILD_DOC "Build documentation." ON)
 
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
 if(BUILD_DOC)
   find_program(ASCIIDOCTOR_EXE asciidoctor)
   if(NOT ASCIIDOCTOR_EXE)
